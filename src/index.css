@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #020617;
+  --color-navy-900: #0f172a;
+  --color-navy-800: #1e293b;
+  --color-navy-700: #334155;
+  --color-navy-600: #475569;
+  --color-navy-500: #64748b;
+  --color-navy-400: #94a3b8;
+  --color-navy-300: #cbd5e1;
+  --color-navy-200: #e2e8f0;
+
+  --color-accent-blue: #3b82f6;
+  --color-accent-cyan: #06b6d4;
+  --color-accent-green: #10b981;
+  --color-accent-yellow: #f59e0b;
+  --color-accent-red: #ef4444;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-navy-950 text-navy-300 antialiased;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-navy-800/70 backdrop-blur-xl border border-navy-600/50 rounded-2xl shadow-xl shadow-black/30;
+  }
+
+  .input-field {
+    @apply w-full bg-navy-900 border border-navy-600/70 rounded-xl px-4 py-3.5 text-white text-[15px] placeholder-navy-500 focus:outline-none focus:ring-2 focus:ring-accent-blue/60 focus:border-accent-blue/60 transition-all duration-300;
+  }
+
+  .input-with-icon {
+    @apply pl-12;
+  }
+
+  .input-icon {
+    @apply absolute left-4 top-1/2 -translate-y-1/2 w-[18px] h-[18px] text-navy-400 pointer-events-none;
+  }
+
+  .field-label {
+    @apply block text-sm text-navy-200 mb-2 font-medium tracking-wide;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-blue via-accent-cyan to-accent-blue bg-clip-text text-transparent;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 60px rgba(59, 130, 246, 0.1);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), 0 0 60px rgba(16, 185, 129, 0.1);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3), 0 0 60px rgba(239, 68, 68, 0.1);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3), 0 0 60px rgba(245, 158, 11, 0.1);
+  }
+}
